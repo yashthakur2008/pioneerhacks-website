@@ -1,0 +1,94 @@
+:root {
+  color-scheme: dark;
+  --bg: #070a18;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.14);
+  --text: #f7f8ff;
+  --muted: #b8c1dd;
+  --brand: #7cf7d4;
+  --brand-2: #8ea7ff;
+  --accent: #ffca7a;
+  --border: rgba(255, 255, 255, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(124, 247, 212, 0.24), transparent 34%),
+    radial-gradient(circle at top right, rgba(142, 167, 255, 0.28), transparent 30%), var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(7, 10, 24, 0.78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand { font-weight: 800; letter-spacing: -0.04em; font-size: 1.35rem; }
+.nav-links { display: flex; gap: 18px; color: var(--muted); font-weight: 600; }
+.nav-links a:hover { color: var(--brand); }
+
+.section { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 76px 0; }
+.hero { min-height: 78vh; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 42px; }
+.eyebrow { color: var(--brand); text-transform: uppercase; letter-spacing: 0.16em; font-weight: 800; font-size: 0.78rem; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(3rem, 8vw, 6.8rem); line-height: 0.9; letter-spacing: -0.08em; margin-bottom: 24px; }
+h2 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -0.055em; margin-bottom: 18px; }
+h3 { font-size: 1.2rem; margin-bottom: 10px; }
+p, li { color: var(--muted); line-height: 1.7; }
+.lede { font-size: 1.25rem; max-width: 680px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.button { border: 1px solid var(--border); border-radius: 999px; padding: 13px 20px; font-weight: 800; cursor: pointer; display: inline-flex; justify-content: center; }
+.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #06101c; border: 0; }
+.secondary { background: var(--panel); color: var(--text); }
+.hero-card, .info-card, .venue-card, .team-card, .signup-form, .sponsor-card {
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+.hero-card { padding: 34px; transform: rotate(2deg); }
+.hero-card h2 { color: var(--accent); }
+.badge { display: inline-flex; margin-bottom: 28px; color: #071018; background: var(--accent); border-radius: 999px; padding: 8px 12px; font-weight: 800; }
+.grid.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.info-card, .team-card { padding: 26px; }
+.split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: start; }
+.signup-form { padding: 26px; display: grid; gap: 16px; }
+label { display: grid; gap: 8px; color: var(--text); font-weight: 700; }
+input { width: 100%; border: 1px solid var(--border); border-radius: 16px; background: rgba(255, 255, 255, 0.08); color: var(--text); padding: 14px 16px; font: inherit; }
+input::placeholder { color: rgba(184, 193, 221, 0.7); }
+.venue-card { padding: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.section-intro { max-width: 720px; }
+.sponsor-grid, .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
+.sponsor-card { min-height: 140px; display: grid; place-items: center; color: var(--text); font-weight: 800; text-align: center; padding: 18px; border-style: dashed; }
+ul { padding-left: 20px; margin-bottom: 0; }
+.footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 34px 0 52px; display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--border); }
+.footer a { color: var(--brand); font-weight: 800; }
+
+@media (max-width: 860px) {
+  .nav { align-items: flex-start; flex-direction: column; padding: 18px 0; }
+  .nav-links { flex-wrap: wrap; }
+  .hero, .split, .venue-card { grid-template-columns: 1fr; }
+  .grid.three, .sponsor-grid, .team-grid { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding-top: 54px; }
+  .hero-card { transform: none; }
+  .footer { flex-direction: column; }
+}
