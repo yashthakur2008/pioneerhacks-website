@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #03040a;
+  --bg-2: #070812;
+  --text: #f7f8ff;
+  --muted: #9aa3b8;
+  --line: rgba(255,255,255,.12);
+  --violet: #7668ff;
+  --blue: #45a7ff;
+  --gold: #f4b62a;
+  --red: #c91f2e;
+  --intro-progress: 0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body { margin: 0; color: var(--text); background: var(--bg); font-family: var(--font-inter), Inter, system-ui, sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 80; opacity: .13; background-image: radial-gradient(rgba(255,255,255,.28) .7px, transparent .7px); background-size: 3px 3px; mix-blend-mode: overlay; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: rgba(118,104,255,.35); }
+.section-shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+.mono { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace; }
+.editorial-title { font-size: clamp(3rem, 8vw, 7.8rem); line-height: .88; letter-spacing: -.08em; }
+.section-title { font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .92; letter-spacing: -.065em; }
+.hairline { border-color: var(--line); }
+.atmosphere { background: radial-gradient(circle at 20% 18%, rgba(118,104,255,.22), transparent 28rem), radial-gradient(circle at 78% 24%, rgba(69,167,255,.16), transparent 26rem), linear-gradient(180deg, #03040a 0%, #070812 52%, #03040a 100%); }
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 0 18px; font-weight: 700; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.26); }
+.btn-primary { background: var(--text); color: #05060c; border-color: var(--text); }
+.btn-secondary { background: rgba(255,255,255,.045); color: var(--text); }
+.card { border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.035); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
