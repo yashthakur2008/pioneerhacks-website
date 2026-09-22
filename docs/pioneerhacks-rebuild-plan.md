@@ -20,6 +20,10 @@ PioneerHacks is framed as a mid-October hackathon open to all high schoolers: ar
 - `components/CTAFooter.tsx`: closing CTA and editorial footer.
 - `data/content.ts`: editable product copy and section data.
 
+## Inspiration references
+- memorable.sh for dark editorial technical restraint, original composition only.
+- synthesishacks.com for hackathon-specific pacing, high school event clarity, and public signup/sponsor storytelling.
+
 ## 3. Visual design tokens
 - Background: `#03040a`, layered with violet `#6d5dfc` and blue `#3aa7ff` atmospheric light.
 - Text: white `#f7f8ff`, muted `#9aa3b8`, hairline borders `rgba(255,255,255,.12)`.
